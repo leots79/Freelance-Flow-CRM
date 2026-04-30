@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebarHeader">
+                <h2 class="sidebarLogo">FreelanceFlow</h2>
+            </div>
+            <nav class="sidebarNav">
+                <ul class="navList">
+                    <li class="navItem active">
+                        <a href="dashboard.html" class="navLink">⭐ Dashboard Inicio</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#" class="navLink">👥 Clientes</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#" class="navLink">📁 Proyectos</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#" class="navLink">✅ Tareas</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebarFooter">
+                <button class="btn btnSecondary btnBlock btnLogout" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <!-- Mobile Menu Button -->
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Resumen General</h1>
+                </div>
+                <div class="topbarRight">
+                    <div class="userProfile">
+                        <div class="avatarCircle">LE</div>
+                        <span class="userName">LeoFreelance</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="contentWrapper">
+                <!-- KPI Cards -->
+                <section class="kpiGrid">
+                    <article class="card">
+                        <p class="cardSubtitle">Ingresos Brutos (Mes)</p>
+                        <h3 class="cardValue">$4,500.00</h3>
+                        <span class="badge badgeSuccess">+15% vs mes anterior</span>
+                    </article>
+                    <article class="card">
+                        <p class="cardSubtitle">Proyectos Activos</p>
+                        <h3 class="cardValue">8</h3>
+                        <span class="badge badgeNeutral">2 en riesgo</span>
+                    </article>
+                    <article class="card">
+                        <p class="cardSubtitle">Total Clientes</p>
+                        <h3 class="cardValue">28</h3>
+                    </article>
+                </section>
+
+                <div class="dashboardGrid">
+                    <!-- Recent Projects section -->
+                    <section class="card colSpan2">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">Proyectos Recientes</h3>
+                            <button class="btn btnSecondary btnSmall">Ver todos</button>
+                        </div>
+                        <div class="tableResponsive">
+                            <table class="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Proyecto</th>
+                                        <th>Cliente</th>
+                                        <th>Estado</th>
+                                        <th>Avance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cellStrong">Rediseño Web UX/UI</td>
+                                        <td>Acme Corp</td>
+                                        <td><span class="statusTag statusProgress">En Progreso</span></td>
+                                        <td><div class="progressBar"><div class="progressFill" style="width: 75%;"></div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cellStrong">Campaña Marketing Q3</td>
+                                        <td>TechGlobal</td>
+                                        <td><span class="statusTag statusPending">Pendiente</span></td>
+                                        <td><div class="progressBar"><div class="progressFill" style="width: 10%;"></div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cellStrong">App Móvil iOS</td>
+                                        <td>StartUp Inc</td>
+                                        <td><span class="statusTag statusDone">Completado</span></td>
+                                        <td><div class="progressBar"><div class="progressFill bgSuccess" style="width: 100%;"></div></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Tasks -->
+                    <section class="card">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">Próximas Entregas</h3>
+                        </div>
+                        <ul class="taskList">
+                            <li class="taskItem">
+                                <div class="taskInfo">
+                                    <h4 class="taskName">Wireframes Home</h4>
+                                    <span class="taskProject">Acme Corp</span>
+                                </div>
+                                <span class="taskDate textDanger">Hoy</span>
+                            </li>
+                            <li class="taskItem">
+                                <div class="taskInfo">
+                                    <h4 class="taskName">Revisión Contratos</h4>
+                                    <span class="taskProject">TechGlobal</span>
+                                </div>
+                                <span class="taskDate textWarning">Mañana</span>
+                            </li>
+                            <li class="taskItem">
+                                <div class="taskInfo">
+                                    <h4 class="taskName">Deploy a QA</h4>
+                                    <span class="taskProject">StartUp Inc</span>
+                                </div>
+                                <span class="taskDate">Jueves 24</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/dashboard.js" defer></script>
+</body>
+</html>

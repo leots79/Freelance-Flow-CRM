@@ -1,0 +1,16 @@
+# Carpetas de Documentación (Mantener local)
+DocumentacionBackend/
+DocumentacionFrontend/
+DocumentacionGeneral/
+Etapa1_Arquitectura/
+Etapa2_UI/
+Etapa3_JS/
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/database.sqlite
+
+# OS files
+.DS_Store
+Thumbs.db

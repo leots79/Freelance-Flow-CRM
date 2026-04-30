@@ -1,0 +1,93 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fontBody);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Typography styles */
+.titleLarge {
+    font-size: var(--fontSizeXl);
+    font-weight: 700;
+    color: var(--textColor);
+    margin-bottom: 0.5rem;
+}
+
+.textMuted {
+    color: var(--textLight);
+    font-size: var(--fontSizeSm);
+}
+
+/* Form Styles */
+.formGroup {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabel {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--textColor);
+    font-size: var(--fontSizeSm);
+}
+
+.formInput {
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: var(--borderRadiusMd);
+    font-family: var(--fontBody);
+    font-size: var(--fontSizeBase);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: var(--accentColor);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--borderRadiusMd);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    font-family: var(--fontBody);
+    font-size: var(--fontSizeBase);
+}
+
+.btnPrimary {
+    background-color: var(--accentColor);
+    color: var(--textInverted);
+}
+
+.btnPrimary:hover {
+    background-color: var(--accentHover);
+}
+
+.btnBlock {
+    width: 100%;
+}

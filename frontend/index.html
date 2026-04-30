@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FreelanceFlow CRM</title>
+    <!-- Referenciamos nuestros estilos -->
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+
+<body>
+    <main class="authLayout">
+        <!-- Formulario (Lado izquierdo) -->
+        <section class="authContainer">
+            <div class="authHeader">
+                <h1 class="titleLarge">FreelanceFlow</h1>
+                <p class="textMuted">Bienvenido de nuevo, ingresa a tu cuenta</p>
+            </div>
+
+            <form class="authForm" id="loginForm">
+                <div class="formGroup">
+                    <label class="formLabel" for="email">Correo Electrónico</label>
+                    <input class="formInput" type="email" id="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="formGroup">
+                    <label class="formLabel" for="password">Contraseña</label>
+                    <input class="formInput" type="password" id="password" placeholder="********" required>
+                </div>
+
+                <button type="submit" class="btn btnPrimary btnBlock" id="btnLogin">Iniciar Sesión</button>
+            </form>
+
+            <div class="authFooter">
+                <p class="textSmall">Solo acceso administrador. <a href="#" class="authLink">Contacto</a></p>
+            </div>
+        </section>
+
+        <!-- Creativo lateral (Lado derecho - Color corporativo) -->
+        <section class="authSidebar">
+            <div class="authSidebarContent">
+                <h2 class="authSidebarTitle">Organiza tus clientes.</h2>
+                <h2 class="authSidebarTitle">Potencia tus proyectos.</h2>
+                <p class="authSidebarText">El CRM centralizado creado específicamente para trabajadores autónomos.</p>
+            </div>
+        </section>
+    </main>
+    <script src="./js/auth.js" defer></script>
+</body>
+
+</html>
