@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebarHeader">
+                <h2 class="sidebarLogo">FreelanceFlow</h2>
+            </div>
+            <nav class="sidebarNav">
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="dashboard.html" class="navLink">⭐ Dashboard Inicio</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="clients.html" class="navLink">👥 Clientes</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="projects.html" class="navLink">📁 Proyectos</a>
+                    </li>
+                    <li class="navItem active">
+                        <a href="tasks.html" class="navLink">✅ Tareas</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebarFooter">
+                <button class="btn btnSecondary btnBlock btnLogout" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Listado de Tareas</h1>
+                </div>
+                <div class="topbarRight">
+                    <button class="btn btnPrimary" id="newTaskBtn">+ Añadir Tarea</button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="contentWrapper">
+                <div class="dashboardGrid">
+                    <!-- Columna: Pendientes -->
+                    <section class="card">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">Pendientes</h3>
+                            <span class="badge badgeNeutral">2</span>
+                        </div>
+                        <ul class="taskList">
+                            <li class="taskItem">
+                                <div class="taskInfo">
+                                    <h4 class="taskName">Revisión Contratos</h4>
+                                    <span class="taskProject">TechGlobal</span>
+                                </div>
+                                <span class="taskDate textWarning">Mañana</span>
+                            </li>
+                            <li class="taskItem">
+                                <div class="taskInfo">
+                                    <h4 class="taskName">Deploy a QA</h4>
+                                    <span class="taskProject">StartUp Inc</span>
+                                </div>
+                                <span class="taskDate">Jueves 24</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Columna: En Progreso -->
+                    <section class="card">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">En Progreso</h3>
+                            <span class="badge badgeSuccess">1</span>
+                        </div>
+                        <ul class="taskList">
+                            <li class="taskItem" style="border-left: 4px solid var(--primaryColor);">
+                                <div class="taskInfo">
+                                    <h4 class="taskName">Wireframes Home</h4>
+                                    <span class="taskProject">Acme Corp</span>
+                                </div>
+                                <span class="taskDate textDanger">Hoy</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/dashboard.js" defer></script>
+</body>
+</html>

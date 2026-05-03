@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebarHeader">
+                <h2 class="sidebarLogo">FreelanceFlow</h2>
+            </div>
+            <nav class="sidebarNav">
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="dashboard.html" class="navLink">⭐ Dashboard Inicio</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="clients.html" class="navLink">👥 Clientes</a>
+                    </li>
+                    <li class="navItem active">
+                        <a href="projects.html" class="navLink">📁 Proyectos</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="tasks.html" class="navLink">✅ Tareas</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebarFooter">
+                <button class="btn btnSecondary btnBlock btnLogout" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Gestión de Proyectos</h1>
+                </div>
+                <div class="topbarRight">
+                    <button class="btn btnPrimary" id="newProjectBtn">+ Nuevo Proyecto</button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="contentWrapper">
+                <section class="card">
+                    <div class="tableResponsive">
+                        <table class="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Cliente</th>
+                                    <th>Fechas</th>
+                                    <th>Estado</th>
+                                    <th>Avance</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectsTableBody">
+                                <!-- Dummy Data -->
+                                <tr>
+                                    <td class="cellStrong">Rediseño Web UX/UI</td>
+                                    <td>Acme Corp</td>
+                                    <td class="textSmall">12 Oct - 30 Nov</td>
+                                    <td><span class="statusTag statusProgress">En Progreso</span></td>
+                                    <td>
+                                        <div class="progressBar"><div class="progressFill" style="width: 75%;"></div></div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btnSecondary btnSmall">✏️</button>
+                                        <button class="btn btnSecondary btnSmall textDanger">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cellStrong">Campaña Marketing Q3</td>
+                                    <td>TechGlobal SA</td>
+                                    <td class="textSmall">01 Sep - 15 Oct</td>
+                                    <td><span class="statusTag statusPending">Pendiente</span></td>
+                                    <td>
+                                        <div class="progressBar"><div class="progressFill" style="width: 10%;"></div></div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btnSecondary btnSmall">✏️</button>
+                                        <button class="btn btnSecondary btnSmall textDanger">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cellStrong">App Móvil iOS</td>
+                                    <td>StartUp Inc</td>
+                                    <td class="textSmall">15 Ene - 20 Mar</td>
+                                    <td><span class="statusTag statusDone">Completado</span></td>
+                                    <td>
+                                        <div class="progressBar"><div class="progressFill bgSuccess" style="width: 100%;"></div></div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btnSecondary btnSmall">✏️</button>
+                                        <button class="btn btnSecondary btnSmall textDanger">🗑️</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="../js/dashboard.js" defer></script>
+</body>
+</html>

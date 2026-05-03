@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebarHeader">
+                <h2 class="sidebarLogo">FreelanceFlow</h2>
+            </div>
+            <nav class="sidebarNav">
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="dashboard.html" class="navLink">⭐ Dashboard Inicio</a>
+                    </li>
+                    <li class="navItem active">
+                        <a href="clients.html" class="navLink">👥 Clientes</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="projects.html" class="navLink">📁 Proyectos</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="tasks.html" class="navLink">✅ Tareas</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebarFooter">
+                <button class="btn btnSecondary btnBlock btnLogout" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Directorio de Clientes</h1>
+                </div>
+                <div class="topbarRight">
+                    <button class="btn btnPrimary" id="newClientBtn">+ Añadir Cliente</button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="contentWrapper">
+                <section class="card">
+                    <div class="tableResponsive">
+                        <table class="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Cliente</th>
+                                    <th>Empresa</th>
+                                    <th>RFC / NIT</th>
+                                    <th>Correo</th>
+                                    <th>Teléfono</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientsTableBody">
+                                <!-- Dummy Data -->
+                                <tr>
+                                    <td class="cellStrong">Carlos Ruiz</td>
+                                    <td>Acme Corp</td>
+                                    <td>XAXX010101000</td>
+                                    <td>carlos@acmecorp.com</td>
+                                    <td>+52 555 123 4567</td>
+                                    <td>
+                                        <button class="btn btnSecondary btnSmall">✏️</button>
+                                        <button class="btn btnSecondary btnSmall textDanger">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cellStrong">María Fernanda</td>
+                                    <td>TechGlobal SA</td>
+                                    <td>TECH123456789</td>
+                                    <td>maria@techglobal.com</td>
+                                    <td>+57 300 987 6543</td>
+                                    <td>
+                                        <button class="btn btnSecondary btnSmall">✏️</button>
+                                        <button class="btn btnSecondary btnSmall textDanger">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cellStrong">StartUp Inc</td>
+                                    <td>StartUp Inc LLC</td>
+                                    <td>STRT999888777</td>
+                                    <td>contacto@startup.inc</td>
+                                    <td>+1 800 555 0199</td>
+                                    <td>
+                                        <button class="btn btnSecondary btnSmall">✏️</button>
+                                        <button class="btn btnSecondary btnSmall textDanger">🗑️</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="../js/dashboard.js" defer></script>
+</body>
+</html>
