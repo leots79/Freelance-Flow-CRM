@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+
+            <!-- LOGO -->
+            <div class="sidebarHeader">
+                <img src="../css/resources/logos/logo-enlace360.png" alt="Enlace 360 Logo" class="sidebarLogo">
+            </div>
+
+            <!-- NAVIGATION -->
+            <nav class="sidebarNav">
+                <ul class="navList">
+
+                    <li class="navItem active">
+                        <a href="dashboard.html" class="navLink">
+                            <span class="navIcon">☎</span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="navItem">
+                        <a href="clients.html" class="navLink">
+                            <span class="navIcon">◔</span>
+                            <span>Clientes</span>
+                        </a>
+                    </li>
+
+                    <li class="navItem">
+                        <a href="projects.html" class="navLink">
+                            <span class="navIcon">⌂</span>
+                            <span>Proyectos</span>
+                        </a>
+                    </li>
+
+                    <li class="navItem">
+                        <a href="tasks.html" class="navLink">
+                            <span class="navIcon">✓</span>
+                            <span>Tareas</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- FOOTER -->
+            <div class="sidebarFooter">
+                <button class="logoutBtn" id="logoutBtn">
+                    Cerrar sesión
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <!-- Mobile Menu Button -->
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Resumen General</h1>
+                </div>
+                <div class="topbarRight">
+                    <div class="userProfile">
+                        <div class="avatarCircle">LE</div>
+                        <span class="userName">LeoFreelance</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="contentWrapper">
+                <!-- KPI Cards -->
+                <section class="kpiGrid">
+                    <article class="card">
+                        <p class="cardSubtitle">Ingresos Estimados (Mes)</p>
+                        <h3 class="cardValue" id="grossIncome">$0.00</h3>
+                        <span class="badge badgeSuccess" id="incomeForecastBadge">
+                            Calculando...
+                        </span>
+                    </article>
+                    <article class="card">
+                        <p class="cardSubtitle">Proyectos Activos</p>
+                        <h3 class="cardValue" id="activeProjectsCount">0</h3>
+                        <span class="badge badgeNeutral" id="projectsRiskBadge">0 en riesgo</span>
+                    </article>
+                    <article class="card">
+                        <p class="cardSubtitle">Total Clientes</p>
+                        <h3 class="cardValue" id="totalClientsCount">0</h3>
+                    </article>
+                </section>
+
+                <div class="dashboardGrid">
+                    <!-- Recent Projects section -->
+                    <section class="card colSpan2">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">Proyectos Recientes</h3>
+                            <button class="btn btnSecondary btnSmall">Ver todos</button>
+                        </div>
+                        <div class="tableResponsive">
+                            <table class="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Proyecto</th>
+                                        <th>Cliente</th>
+                                        <th>Estado</th>
+                                        <th>Avance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentProjectsBody">
+                                    <!-- Datos cargados dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Tasks -->
+                    <section class="card">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">Próximas Entregas</h3>
+                        </div>
+                        <ul class="taskList" id="upcomingTasksList">
+                            <!-- Datos cargados dinámicamente -->
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/dashboard.js" defer></script>
+</body>
+
+</html>

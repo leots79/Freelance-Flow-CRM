@@ -1,0 +1,579 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+    /* COLORS */
+    --backgroundColor: #17152f;
+    --surfaceColor: #2b2950;
+    --surfaceColorLight: #353261;
+
+    --accentColor: #8b5cf6;
+    --accentHover: #7c3aed;
+
+    --successColor: #4ade80;
+    --warningColor: #facc15;
+    --dangerColor: #fb7185;
+
+    --textColor: #f8fafc;
+    --textLight: #cbd5e1;
+    --textMuted: #94a3b8;
+    --textInverted: #ffffff;
+
+    --borderColor: rgba(255,255,255,0.08);
+
+    /* TYPOGRAPHY */
+    --fontBody: 'Inter', sans-serif;
+
+    --fontSizeSm: 0.875rem;
+    --fontSizeBase: 1rem;
+    --fontSizeLg: 1.25rem;
+    --fontSizeXl: 2rem;
+
+    /* EFFECTS */
+    --borderRadiusMd: 18px;
+
+    --shadowMd:
+        0 10px 30px rgba(0,0,0,0.30);
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fontBody);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.titleLarge {
+    font-size: var(--fontSizeXl);
+    font-weight: 700;
+    color: var(--textColor);
+    margin-bottom: 0.5rem;
+}
+
+.textMuted {
+    color: var(--textMuted);
+    font-size: var(--fontSizeSm);
+}
+
+/* =========================
+   FORM STYLES
+========================= */
+
+.formGroup {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabel {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--textLight);
+    font-size: var(--fontSizeSm);
+}
+
+.formInput,
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: var(--borderRadiusMd);
+
+    font-family: var(--fontBody);
+    font-size: var(--fontSizeBase);
+
+    background: #232042;
+    color: var(--textColor);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+}
+
+.formInput::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: var(--textMuted);
+}
+
+.formInput:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-color: var(--accentColor);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.18);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.85rem 1.5rem;
+
+    border-radius: var(--borderRadiusMd);
+
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+
+    transition: all 0.2s ease;
+
+    font-family: var(--fontBody);
+    font-size: var(--fontSizeBase);
+}
+
+.btnPrimary {
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #7c3aed
+    );
+
+    color: var(--textInverted);
+
+    box-shadow:
+        0 6px 18px rgba(124,58,237,0.35);
+}
+
+.btnPrimary:hover {
+    background: linear-gradient(
+        135deg,
+        #9f67ff,
+        #8b5cf6
+    );
+
+    transform: translateY(-2px);
+}
+
+.btnSecondary {
+    background: #3a3765;
+    color: var(--accentColor);
+}
+
+.btnSecondary:hover {
+    background: #464273;
+}
+
+.btnBlock {
+    width: 100%;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    border: none;
+    padding: 0;
+    border-radius: var(--borderRadiusMd);
+    background: transparent;
+    margin: auto;
+}
+
+.modal::backdrop {
+    background: rgba(7, 10, 25, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.modalContent {
+
+    background:
+        linear-gradient(
+            180deg,
+            #302d5a 0%,
+            #252248 100%
+        );
+
+    width: min(90vw, 680px);
+
+    border-radius: 24px;
+
+    padding: 2rem;
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.45);
+
+    animation: modalFade 0.25s ease;
+}
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+#modalTitle {
+    font-size: var(--fontSizeXl);
+    font-weight: 700;
+    color: var(--textColor);
+    margin-bottom: 1.75rem;
+}
+
+/* =========================
+   MODAL FORM
+========================= */
+
+.modal .formGroup label {
+    font-size: var(--fontSizeSm);
+    font-weight: 600;
+    color: var(--textLight);
+    margin-bottom: 0.55rem;
+}
+
+.modal textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+.modalRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.modalRow > div {
+    flex: 1;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card,
+.panel,
+.dashboardCard,
+.statsCard {
+
+    background:
+        linear-gradient(
+            180deg,
+            #302d5a 0%,
+            #252248 100%
+        );
+
+    border-radius: 22px;
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+        var(--shadowMd);
+}
+
+/* =========================
+   TABLES
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: var(--textMuted);
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+}
+
+td {
+    padding: 1rem;
+    border-top:
+        1px solid rgba(255,255,255,0.05);
+
+    color: var(--textLight);
+}
+
+/* =========================
+   STATUS COLORS
+========================= */
+
+.statusPending {
+    color: var(--warningColor);
+}
+
+.statusProgress {
+    color: #60a5fa;
+}
+
+.statusCompleted {
+    color: var(--successColor);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(10px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 640px) {
+
+    .modalContent {
+        padding: 1.5rem;
+    }
+
+    .modalRow {
+        flex-direction: column;
+    }
+
+    .modalActions {
+        flex-direction: column;
+    }
+
+    .modalActions .btn {
+        width: 100%;
+    }
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+
+/* GLOBAL SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+        #211f3d;
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+    border-radius: 999px;
+
+    border:
+        2px solid #211f3d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #9f67ff,
+            #7c3aed
+        );
+}
+
+/* FIREFOX */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 #211f3d;
+}
+
+/* =========================
+   MODAL SCROLL
+========================= */
+
+.modalContent {
+
+    max-height: 88vh;
+    overflow-y: auto;
+
+    scrollbar-gutter: stable;
+}
+
+/* =========================
+   SELECT / COMBOBOX
+========================= */
+
+select {
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+
+    background-color: #232042;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #b9b8d3 50%
+        ),
+        linear-gradient(
+            135deg,
+            #b9b8d3 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 20px) calc(50% - 3px),
+        calc(100% - 14px) calc(50% - 3px);
+
+    background-size:
+        6px 6px,
+        6px 6px;
+
+    background-repeat: no-repeat;
+
+    padding-right: 3rem;
+}
+
+/* HOVER */
+
+select:hover {
+
+    border-color:
+        rgba(139,92,246,0.5);
+}
+
+/* FOCUS */
+
+select:focus {
+
+    border-color:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px rgba(139,92,246,0.18);
+}
+
+/* OPTIONS */
+
+select option {
+
+    background:
+        #2b2950;
+
+    color:
+        #f8fafc;
+
+    padding:
+        1rem;
+}
+
+/* =========================
+   MODAL INTERNAL SECTIONS
+========================= */
+
+.modalContent hr {
+
+    border:
+        none;
+
+    height:
+        1px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    margin:
+        1.5rem 0;
+}
+
+/* =========================
+   TEXTAREA SCROLLBAR
+========================= */
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #211f3d;
+    border-radius: 999px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+    border-radius: 999px;
+}

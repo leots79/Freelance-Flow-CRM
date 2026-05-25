@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="sidebarHeader">
+        <img 
+             src="../css/resources/logos/logo-enlace360.png" 
+            alt="Enlace 360 Logo"
+            class="sidebarLogo"
+        >
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="sidebarNav">
+        <ul class="navList">
+
+            <li class="navItem ">
+                <a href="dashboard.html" class="navLink">
+                    <span class="navIcon">☎</span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="navItem active">
+                <a href="clients.html" class="navLink">
+                    <span class="navIcon">◔</span>
+                    <span>Clientes</span>
+                </a>
+            </li>
+
+            <li class="navItem ">
+                <a href="projects.html" class="navLink">
+                    <span class="navIcon">⌂</span>
+                    <span>Proyectos</span>
+                </a>
+            </li>
+
+            <li class="navItem">
+                <a href="tasks.html" class="navLink">
+                    <span class="navIcon">✓</span>
+                    <span>Tareas</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- FOOTER -->
+    <div class="sidebarFooter">
+        <button class="logoutBtn" id="logoutBtn">
+            Cerrar sesión
+        </button>
+    </div>
+
+</aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Directorio de Clientes</h1>
+                </div>
+                <div class="topbarRight">
+                    <button class="btn btnPrimary" id="newClientBtn">+ Añadir Cliente</button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="contentWrapper">
+                <section class="card">
+                    <div class="tableResponsive">
+                        <table class="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Cliente</th>
+                                    <th>Empresa</th>
+                                    <th>RFC / NIT</th>
+                                    <th>Correo</th>
+                                    <th>Teléfono</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientsTableBody">
+                                <!-- Datos cargados dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para Cliente -->
+    <dialog id="clientModal" class="modal">
+        <div class="modalContent">
+            <h2 id="modalTitle" style="margin-bottom: 1rem;">Nuevo Cliente</h2>
+            <form id="clientForm">
+                <input type="hidden" id="clientId">
+                <div class="formGroup">
+                    <label>Nombre Completo *</label>
+                    <input type="text" id="full_name" required>
+                </div>
+                <div class="formGroup">
+                    <label>Empresa</label>
+                    <input type="text" id="company">
+                </div>
+                <div class="formGroup">
+                    <label>RFC / NIT</label>
+                    <input type="text" id="tax_id">
+                </div>
+                <div class="formGroup">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="formGroup">
+                    <label>Teléfono</label>
+                    <input type="text" id="phone">
+                </div>
+                <div class="formGroup">
+                    <label>Estado</label>
+                    <select id="status">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="modalActions">
+                    <button type="button" class="btn btnSecondary" id="cancelClientBtn">Cancelar</button>
+                    <button type="submit" class="btn btnPrimary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="../js/dashboard.js" defer></script>
+    <script src="../js/clients.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+/* Layout for Dashboard */
+.dashLayout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 250px;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #322f61 0%,
+            #2a274f 100%
+        );
+
+    border-right:
+        1px solid rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 2rem 1.25rem;
+
+    box-shadow:
+        10px 0 30px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebarHeader {
+    margin-bottom: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebarLogo {
+
+    width: 160px;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.sidebarNav {
+    flex: 1;
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+
+    padding: 0.95rem 1rem;
+
+    border-radius: 14px;
+
+    color: #d7d7f0;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+/* ICONS */
+
+.navIcon {
+
+    width: 22px;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 1rem;
+
+    opacity: 0.9;
+}
+
+/* HOVER */
+
+.navLink:hover {
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color: white;
+
+    transform:
+        translateX(3px);
+}
+
+/* ACTIVE */
+
+.navItem.active .navLink {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    box-shadow:
+        inset 3px 0 0 #8b5cf6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.sidebarFooter {
+    margin-top: 2rem;
+}
+
+.logoutBtn {
+
+    width: 100%;
+
+    padding: 0.85rem 1rem;
+
+    border: none;
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color: #d7d7f0;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.logoutBtn:hover {
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: white;
+
+    transform:
+        translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 90px;
+        padding: 1.5rem 0.75rem;
+    }
+
+    .sidebarLogo {
+        width: 52px;
+    }
+
+    .navLink span:not(.navIcon) {
+        display: none;
+    }
+
+    .navLink {
+        justify-content: center;
+    }
+
+    .logoutBtn {
+        font-size: 0;
+    }
+
+    .logoutBtn::before {
+        content: "↩";
+        font-size: 1rem;
+    }
+}
+
+/* Main Content Area */
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Important for table responsiveness */
+}
+
+/* Topbar */
+.topbar {
+    height: 70px;
+    background-color: var(--surfaceColor);
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.topbarLeft, .topbarRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--textColor);
+}
+
+.pageTitle {
+    font-size: var(--fontSizeLg);
+    font-weight: 600;
+    color: var(--textColor);
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.avatarCircle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--accentColor);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--fontSizeSm);
+}
+
+.userName {
+    font-weight: 500;
+    font-size: var(--fontSizeSm);
+}
+
+/* Content Wrapper */
+.contentWrapper {
+    padding: 2rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Cards & Layout */
+.card {
+    background-color: var(--surfaceColor);
+    border-radius: var(--borderRadiusLg);
+    box-shadow: var(--shadowSm);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+    font-size: var(--fontSizeMd);
+    font-weight: 600;
+}
+
+.cardSubtitle {
+    color: var(--textLight);
+    font-size: var(--fontSizeSm);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.cardValue {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Grids */
+.kpiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .dashboardGrid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Buttons Generics for Dash */
+
+
+.btnSecondary:hover {
+    background-color: #e5e7eb;
+}
+
+.btnSmall {
+    padding: 0.25rem 0.75rem;
+    font-size: var(--fontSizeSm);
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badgeSuccess {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--successColor);
+}
+
+.badgeNeutral {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warningColor);
+}
+
+/* Data Tables */
+.tableResponsive {
+    overflow-x: auto;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.dataTable th {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: var(--textLight);
+    font-size: var(--fontSizeSm);
+    font-weight: 500;
+}
+
+.dataTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: var(--textColor);
+    font-size: var(--fontSizeSm);
+}
+
+.cellStrong {
+    font-weight: 600;
+    color: var(--primaryColor);
+}
+
+/* Status Tags */
+.statusTag {
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.statusProgress {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--accentColor);
+}
+
+.statusPending {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warningColor);
+}
+
+.statusDone {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--successColor);
+}
+
+/* Progress bar */
+.progressBar {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: var(--accentColor);
+}
+
+.bgSuccess {
+    background-color: var(--successColor);
+}
+
+/* Task List */
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.taskItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.taskName {
+    font-weight: 500;
+    font-size: var(--fontSizeSm);
+    margin-bottom: 0.25rem;
+    color: var(--textColor);
+}
+
+.taskProject {
+    font-size: 0.75rem;
+    color: var(--textLight);
+}
+
+.taskDate {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--textLight);
+}
+
+.textDanger { color: var(--dangerColor); }
+.textWarning { color: var(--warningColor); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        height: 100vh;
+        z-index: 1000;
+    }
+    .sidebar.isOpen {
+        transform: translateX(250px);
+    }
+    .mobileMenuBtn {
+        display: block;
+    }
+    .topbar {
+        padding: 0 1rem;
+    }
+    .contentWrapper {
+        padding: 1.5rem 1rem;
+    }
+}

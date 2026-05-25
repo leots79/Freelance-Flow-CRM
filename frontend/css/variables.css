@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+ --backgroundColor: #17152f;
+    --surfaceColor: #2b2950;
+    --surfaceColorLight: #353261;
+
+    --accentColor: #7c3aed;
+    --accentHover: #6d28d9;
+
+    --successColor: #4ade80;
+    --warningColor: #facc15;
+    --dangerColor: #fb7185;
+
+    --textColor: #f8fafc;
+    --textLight: #cbd5e1;
+    --textMuted: #94a3b8;
+    --textInverted: #000000;
+
+    --borderColor: rgba(255,255,255,0.08);
+  
+  /* Status Colors */
+  --dangerColor: #ef4444;
+  --successColor: #10b981;
+  --warningColor: #f59e0b;
+
+  /* Typography */
+  --fontBody: 'Inter', system-ui, -apple-system, sans-serif;
+  --fontSizeSm: 0.875rem;
+  --fontSizeBase: 1rem;
+  --fontSizeMd: 1.125rem;
+  --fontSizeLg: 1.5rem;
+  --fontSizeXl: 2rem;
+  
+  /* Shadows & Radius */
+  --borderRadiusSm: 4px;
+  --borderRadiusMd: 8px;
+  --borderRadiusLg: 12px;
+  
+  --shadowSm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadowMd: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}

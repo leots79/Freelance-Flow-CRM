@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - FreelanceFlow</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashLayout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+
+            <!-- LOGO -->
+            <div class="sidebarHeader">
+                <img src="../css/resources/logos/logo-enlace360.png" alt="Enlace 360 Logo" class="sidebarLogo">
+            </div>
+
+            <!-- NAVIGATION -->
+            <nav class="sidebarNav">
+                <ul class="navList">
+
+                    <li class="navItem ">
+                        <a href="dashboard.html" class="navLink">
+                            <span class="navIcon">☎</span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="navItem">
+                        <a href="clients.html" class="navLink">
+                            <span class="navIcon">◔</span>
+                            <span>Clientes</span>
+                        </a>
+                    </li>
+
+                    <li class="navItem active">
+                        <a href="projects.html" class="navLink">
+                            <span class="navIcon">⌂</span>
+                            <span>Proyectos</span>
+                        </a>
+                    </li>
+
+                    <li class="navItem">
+                        <a href="tasks.html" class="navLink">
+                            <span class="navIcon">✓</span>
+                            <span>Tareas</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- FOOTER -->
+            <div class="sidebarFooter">
+                <button class="logoutBtn" id="logoutBtn">
+                    Cerrar sesión
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mainContent">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="topbarLeft">
+                    <button class="btn mobileMenuBtn" id="mobileMenuBtn">
+                        <span class="menuIcon">☰</span>
+                    </button>
+                    <h1 class="pageTitle">Gestión de Proyectos</h1>
+                </div>
+                <div class="topbarRight">
+                    <button class="btn btnPrimary" id="newProjectBtn">+ Nuevo Proyecto</button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="contentWrapper">
+                <section class="card">
+                    <div class="tableResponsive">
+                        <table class="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Cliente</th>
+                                    <th>Fechas</th>
+                                    <th>Estado</th>
+                                    <th>Avance</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectsTableBody">
+                                <!-- Datos cargados dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para Proyecto -->
+    <dialog id="projectModal" class="modal">
+        <div class="modalContent">
+            <h2 id="modalTitle" style="margin-bottom: 1rem;">Nuevo Proyecto</h2>
+            <form id="projectForm">
+                <input type="hidden" id="projectId">
+                <div class="formGroup">
+                    <label>Título *</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="formGroup">
+                    <label>Cliente *</label>
+                    <select id="client_id" required>
+                        <!-- Opciones cargadas dinámicamente -->
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <label>Descripción</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+                <div class="formGroup modalRow">
+                    <div>
+                        <label>Fecha Inicio</label>
+                        <input type="date" id="start_date">
+                    </div>
+                    <div>
+                        <label>Fecha Límite</label>
+                        <input type="date" id="deadline">
+                    </div>
+                </div>
+                <div class="formGroup modalRow">
+                    <div>
+                        <label>Categoría</label>
+                        <input type="text" id="category" placeholder="Ej. Web, Móvil, Marketing">
+                    </div>
+                    <div>
+                        <label>Estado</label>
+                        <select id="status">
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En Progreso">En Progreso</option>
+                            <option value="Completado">Completado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modalRow">
+
+                    <div class="formGroup">
+                        <label>Monto estimado</label>
+
+                        <input type="number" id="estimated_income" min="0" step="0.01" placeholder="$0.00">
+                    </div>
+
+                    <div class="formGroup">
+                        <label>Anticipo</label>
+
+                        <select id="advance_paid">
+
+                            <option value="false">
+                                Sin pagar
+                            </option>
+
+                            <option value="true">
+                                Pagado
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modalActions">
+                    <button type="button" class="btn btnSecondary" id="cancelProjectBtn">Cancelar</button>
+                    <button type="submit" class="btn btnPrimary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="../js/dashboard.js" defer></script>
+    <script src="../js/projects.js" defer></script>
+</body>
+
+</html>
