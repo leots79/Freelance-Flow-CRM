@@ -86,23 +86,10 @@
                     <section class="card">
                         <div class="cardHeader">
                             <h3 class="cardTitle">Pendientes</h3>
-                            <span class="badge badgeNeutral">2</span>
+                            <span class="badge badgeNeutral" id="pendingCount">0</span>
                         </div>
-                        <ul class="taskList">
-                            <li class="taskItem">
-                                <div class="taskInfo">
-                                    <h4 class="taskName">Revisión Contratos</h4>
-                                    <span class="taskProject">TechGlobal</span>
-                                </div>
-                                <span class="taskDate textWarning">Mañana</span>
-                            </li>
-                            <li class="taskItem">
-                                <div class="taskInfo">
-                                    <h4 class="taskName">Deploy a QA</h4>
-                                    <span class="taskProject">StartUp Inc</span>
-                                </div>
-                                <span class="taskDate">Jueves 24</span>
-                            </li>
+                        <ul class="taskList" id="pendingTasksList">
+                            <!-- Datos cargados dinámicamente -->
                         </ul>
                     </section>
 
@@ -110,23 +97,76 @@
                     <section class="card">
                         <div class="cardHeader">
                             <h3 class="cardTitle">En Progreso</h3>
-                            <span class="badge badgeSuccess">1</span>
+                            <span class="badge badgeSuccess" id="progressCount">0</span>
                         </div>
-                        <ul class="taskList">
-                            <li class="taskItem" style="border-left: 4px solid var(--primaryColor);">
-                                <div class="taskInfo">
-                                    <h4 class="taskName">Wireframes Home</h4>
-                                    <span class="taskProject">Acme Corp</span>
-                                </div>
-                                <span class="taskDate textDanger">Hoy</span>
-                            </li>
+                        <ul class="taskList" id="progressTasksList">
+                            <!-- Datos cargados dinámicamente -->
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Sección: Completadas -->
+                <div style="margin-top: 1.5rem;">
+                    <section class="card">
+                        <div class="cardHeader">
+                            <h3 class="cardTitle">Completadas</h3>
+                            <span class="badge" id="completedCount" style="background-color: rgba(16, 185, 129, 0.1); color: var(--successColor);">0</span>
+                        </div>
+                        <ul class="taskList" id="completedTasksList">
+                            <!-- Datos cargados dinámicamente -->
                         </ul>
                     </section>
                 </div>
             </div>
         </main>
     </div>
+
+    <!-- Modal para Tarea -->
+    <dialog id="taskModal" class="modal">
+        <div class="modalContent">
+            <h2 id="taskModalTitle" style="margin-bottom: 1rem;">Nueva Tarea</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <div class="formGroup">
+                    <label>Título de la Tarea *</label>
+                    <input type="text" id="taskTitle" placeholder="Ej: Diseñar wireframes" required>
+                </div>
+                <div class="formGroup">
+                    <label>Descripción</label>
+                    <textarea id="taskDescription" placeholder="Detalles adicionales de la tarea..."></textarea>
+                </div>
+                <div class="modalRow">
+                    <div class="formGroup">
+                        <label>Estado</label>
+                        <select id="taskStatus">
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En Progreso">En Progreso</option>
+                            <option value="Completada">Completada</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label>Fecha Límite</label>
+                        <input type="date" id="taskDueDate">
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <label>Proyecto Asociado</label>
+                    <select id="taskProject">
+                        <option value="">Sin proyecto</option>
+                        <!-- Proyectos cargados dinámicamente -->
+                    </select>
+                </div>
+                <div class="modalActions">
+                    <button type="button" class="btn btnSecondary" id="cancelTaskBtn">Cancelar</button>
+                    <button type="submit" class="btn btnPrimary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="../js/config.js"></script>
     <script src="../js/dashboard.js" defer></script>
+    <script src="../js/tasks.js" defer></script>
 </body>
 
 </html>

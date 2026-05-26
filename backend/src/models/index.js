@@ -5,6 +5,7 @@ const User = require('./User');
 const Client = require('./Client');
 const Project = require('./Project');
 const Invoice = require('./Invoice');
+const Task = require('./Task');
 
 // Definir relaciones
 
@@ -20,10 +21,15 @@ Project.belongsTo(Client, { foreignKey: 'client_id', as: 'client' });
 Project.hasMany(Invoice, { foreignKey: 'project_id', as: 'invoices' });
 Invoice.belongsTo(Project, { foreignKey: 'project_id', as: 'project' });
 
+// Un Project tiene muchas Tasks
+Project.hasMany(Task, { foreignKey: 'project_id', as: 'tasks' });
+Task.belongsTo(Project, { foreignKey: 'project_id', as: 'project' });
+
 module.exports = {
   sequelize,
   User,
   Client,
   Project,
-  Invoice
+  Invoice,
+  Task
 };

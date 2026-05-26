@@ -9,6 +9,8 @@ Etapa3_JS/
 # Backend
 backend/node_modules/
 backend/.env
+backend/llave.env
+*.env
 backend/database.sqlite
 
 # OS files

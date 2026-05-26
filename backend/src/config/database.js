@@ -1,22 +1,50 @@
 const { Sequelize } = require('sequelize');
 const path = require('path');
 
-const databasePath = path.join(
-    __dirname,
-    '../../database.sqlite'
-);
+let sequelize;
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
+// Si existe DATABASE_URL (Render con PostgreSQL), usar PostgreSQL
+// Si no, usar SQLite local para desarrollo
+if (process.env.DATABASE_URL) {
 
-    storage: databasePath,
+    sequelize = new Sequelize(process.env.DATABASE_URL, {
+        dialect: 'postgres',
+        protocol: 'postgres',
 
-    logging: false,
+        logging: false,
 
-    define: {
-        timestamps: true,
-        freezeTableName: true
-    }
-});
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        },
+
+        define: {
+            timestamps: true,
+            freezeTableName: true
+        }
+    });
+
+} else {
+
+    const databasePath = path.join(
+        __dirname,
+        '../../database.sqlite'
+    );
+
+    sequelize = new Sequelize({
+        dialect: 'sqlite',
+
+        storage: databasePath,
+
+        logging: false,
+
+        define: {
+            timestamps: true,
+            freezeTableName: true
+        }
+    });
+}
 
 module.exports = sequelize;

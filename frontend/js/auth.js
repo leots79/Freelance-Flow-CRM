@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnLogin.textContent = 'Verificando...';
         btnLogin.disabled = true;
 
-        fetch('http://localhost:3000/api/auth/login', {
+        fetch(`${API_BASE}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

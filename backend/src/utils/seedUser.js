@@ -30,9 +30,13 @@ async function seedAdminUser() {
         console.log('✅ Usuario administrador inyectado exitosamente.');
     } catch (error) {
         console.error('❌ Error al inyectar usuario:', error);
-    } finally {
-        process.exit();
     }
 }
 
-seedAdminUser();
+// Exportar como módulo para que app.js lo pueda llamar al arrancar
+module.exports = seedAdminUser;
+
+// Si se ejecuta directamente como script (node src/utils/seedUser.js)
+if (require.main === module) {
+    seedAdminUser().then(() => process.exit());
+}

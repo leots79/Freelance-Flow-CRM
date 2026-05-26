@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fetch Clientes
             const clientsRes =
                 await fetch(
-                    `http://localhost:3000/api/clients?user_id=${userId}`
+                    `${API_BASE}/api/clients?user_id=${userId}`
                 );
 
             const clients =
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fetch Proyectos
             const projectsRes =
                 await fetch(
-                    `http://localhost:3000/api/projects?user_id=${userId}`
+                    `${API_BASE}/api/projects?user_id=${userId}`
                 );
 
             let projects =

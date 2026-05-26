@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modalTitle');
 
     // API URL
-    const API_URL = 'http://localhost:3000/api/clients';
+    const API_URL = `${API_BASE}/api/clients`;
 
     // Obtener usuario actual
     const userStr = localStorage.getItem('ff_user');
